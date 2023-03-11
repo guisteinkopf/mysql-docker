@@ -2,6 +2,7 @@
 
 #### Como usar ?
 ```
+docker network create mysql-network
 docker-compose up -d
 ```
 #### Para ter acesso atraves de outros containers

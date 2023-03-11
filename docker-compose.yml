@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+  mysql:
+    container_name: mysql
+    image: mysql
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: app
+      MYSQL_USER: laravel
+      MYSQL_PASSWORD: secret
+    networks:
+      - mysql-network
+    volumes:
+      - ./mysql:/var/lib/mysql
+
+networks:
+  mysql-network:
+    external: true
+    name: mysql-network
